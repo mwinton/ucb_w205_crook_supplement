@@ -6,7 +6,7 @@ These are general instruction for how to do some updates and cleanup before clas
 
 Files created in your droplet will be owned by science with group science. Files created in your Docker containers will be owned by root with group root.  The following command can be used in the **droplet** when logged in as science to change the owner to science and the group to science, recursively, for a directory:
 ```
-sudo chown -R science:science w205
+sudo chown -R science:science ~/w205
 ```
 
 #### It's a good idea to always update the course-content repo prior to class or before working on assignments
@@ -39,5 +39,15 @@ docker rm -f $(docker ps -aq)
 We won't be using all of these day one.  (I'll be adding these as the semester goes by)
 
 ```
+docker pull midsw205/base:latest
+docker pull midsw205/base:0.1.8
+docker pull midsw205/base:0.1.9
 docker pull redis
+docker pull confluentinc/cp-zookeeper:latest
+docker pull confluentinc/cp-kafka:latest
+docker pull midsw205/spark-python:0.0.5
+docker pull midsw205/spark-python:0.0.6
+docker pull midsw205/cdh-minimal:latest
+docker pull midsw205/hadoop:0.0.2
+docker pull midsw205/presto:0.0.1
 ```
